@@ -1,9 +1,12 @@
 const express = require('express');
 const routes = require('./routes');
+require('dotenv').config();
 
 const app = express();
 app.use(routes);
 
-app.listen(8000, () => {
-  console.log(`Server is Listening on 8000`);
+const PORT = process.env.PORT;
+
+app.listen(PORT, () => {
+  console.log(`Server is Listening on ${PORT}`);
 });
